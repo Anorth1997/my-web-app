@@ -2,6 +2,12 @@
 
 import { useState, useEffect } from 'react';
 
+interface User {
+    id: number;
+    name: string;
+    email: string;
+}
+
 export default function Home() {
   const [users, setUsers] = useState([]);
 
@@ -15,7 +21,7 @@ export default function Home() {
       <main className="p-4">
         <h1 className="text-2xl font-bold mb-4">Users</h1>
         <ul>
-          {users.map((user: any) => (
+          {users.map((user: User) => (
               <li key={user.id}>{user.name} ({user.email})</li>
           ))}
         </ul>
